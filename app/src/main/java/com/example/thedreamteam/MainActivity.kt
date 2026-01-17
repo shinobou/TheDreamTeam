@@ -1,47 +1,30 @@
 package com.example.thedreamteam
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.thedreamteam.ui.theme.TheDreamTeamTheme
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            TheDreamTeamTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        findViewById<Button>(R.id.btnStudent2).setOnClickListener {
+            startActivity(Intent(this, StudentTwoActivity::class.java))
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        findViewById<Button>(R.id.btnStudent3).setOnClickListener {
+            startActivity(Intent(this, StudentThreeActivity::class.java))
+        }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TheDreamTeamTheme {
-        Greeting("Android")
+        findViewById<Button>(R.id.btnStudent4).setOnClickListener {
+            startActivity(Intent(this, StudentFourActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btnStudent5).setOnClickListener {
+            startActivity(Intent(this, StudentFiveActivity::class.java))
+        }
     }
 }
