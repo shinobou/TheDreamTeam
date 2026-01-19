@@ -17,7 +17,7 @@
             android:layout_marginBottom="16dp" />
 
         <TextView
-            android:text="Raven E. Del Mundo"
+            android:text="Del Mundo, Raven E."
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
